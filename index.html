@@ -1,37 +1,151 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Abeni~Food | Taste the Passion</title>
-    <style>
-        /* Global Styles */
-        body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #fcf9f2;
-            color: #333;
-            line-height: 1.6;
-        }
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>Abeni Food | Taste the Passion</title>
+  <meta name="description" content="Abeni Food - delicious home-style meals made with passion.">
+  <style>
+    /* Reset & base */
+    :root{
+      --bg:#fcf9f2;
+      --accent:#ffca28;
+      --dark:#2c3e50;
+      --muted:#6c757d;
+      --container:1100px;
+    }
+    *{box-sizing:border-box}
+    body{
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      margin:0;
+      background:var(--bg);
+      color:var(--dark);
+      line-height:1.5;
+      -webkit-font-smoothing:antialiased;
+      -moz-osx-font-smoothing:grayscale;
+    }
+    a{color:inherit}
+    img{max-width:100%;height:auto;display:block}
 
-        h1, h2, h3 {
-            margin: 0;
-            color: #2c3e50;
-        }
+    /* Layout */
+    .container{max-width:var(--container);margin:0 auto;padding:0 20px}
 
-        /* Header Styles */
-        header {
-            background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover;
-            color: white;
-            text-align: center;
-            padding: 100px 20px;
-        }
+    /* Header / Hero */
+    header{
+      background:
+        linear-gradient(rgba(0,0,0,0.45), rgba(0,0,0,0.45)),
+        url('https://images.unsplash.com/photo-1504674900247-0877df9cc836?ixlib=rb-1.2.1&auto=format&fit=crop&w=1920&q=80') center/cover no-repeat;
+      color:#fff;text-align:center;padding:84px 20px 64px;position:relative;
+    }
+    header h1{font-size:2.6rem;color:var(--accent);letter-spacing:1px;margin-bottom:8px}
+    header p.lead{max-width:720px;margin:0 auto;color:rgba(255,255,255,0.95);font-size:1.05rem}
 
-        header h1 {
-            font-size: 3.5rem;
-            color: #ffca28;
-            letter-spacing: 2px;
-            margin-bottom: 10px;
-        }
+    /* Navigation */
+    nav{display:flex;justify-content:center;gap:18px;margin-top:18px}
+    nav a{background:rgba(255,255,255,0.12);padding:10px 14px;border-radius:8px;text-decoration:none;color:#fff;font-weight:600}
 
+    /* Sections */
+    section{padding:56px 0}
+    .section-title{display:flex;align-items:center;gap:12px;margin-bottom:18px}
+    .section-title h2{font-size:1.4rem;color:var(--dark)}
+
+    /* Cards / Menu */
+    .grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:18px}
+    .card{background:#fff;border-radius:12px;overflow:hidden;box-shadow:0 6px 18px rgba(44,62,80,0.06);border:1px solid rgba(44,62,80,0.04)}
+    .card .body{padding:14px}
+    .card h3{font-size:1.05rem;margin:0 0 6px}
+    .price{color:var(--accent);font-weight:700}
+    .muted{color:var(--muted);font-size:0.95rem}
+
+    /* CTA */
+    .cta{display:inline-block;background:var(--accent);color:#1a1a1a;padding:12px 18px;border-radius:10px;font-weight:700;text-decoration:none}
+
+    /* Footer */
+    footer{background:#fff;border-top:1px solid rgba(44,62,80,0.04);padding:22px 0;color:var(--muted);text-align:center}
+
+    /* Responsive tweaks */
+    @media (min-width:900px){header h1{font-size:3.5rem}}
+    @media (prefers-reduced-motion:reduce){*{transition:none!important}}
+  </style>
+</head>
+<body>
+  <header role="banner">
+    <div class="container">
+      <h1>Abeni Food</h1>
+      <p class="lead">Taste the passion — handcrafted, home-style meals made with fresh ingredients and love.</p>
+      <nav aria-label="Main navigation">
+        <a href="#menu">Menu</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section id="menu">
+      <div class="container">
+        <div class="section-title">
+          <h2>Our Menu</h2>
+        </div>
+        <div class="grid" aria-live="polite">
+          <article class="card" aria-labelledby="dish1">
+            <img src="https://images.unsplash.com/photo-1604908177522-84d935a8bd4b?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Delicious jollof rice with plantain">
+            <div class="body">
+              <h3 id="dish1">Jollof Rice</h3>
+              <p class="muted">A rich, tomato-based rice cooked with spices and served with fried plantain.</p>
+              <p class="price">$8.50</p>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="dish2">
+            <img src="https://images.unsplash.com/photo-1604908554027-8c3f4ae2c8c9?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Stewed chicken with rice">
+            <div class="body">
+              <h3 id="dish2">Stewed Chicken</h3>
+              <p class="muted">Tender chicken simmered in a flavorful sauce, served with rice or yam.</p>
+              <p class="price">$10.00</p>
+            </div>
+          </article>
+
+          <article class="card" aria-labelledby="dish3">
+            <img src="https://images.unsplash.com/photo-1514512364185-83df6bcddef4?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=60" alt="Fresh salad">
+            <div class="body">
+              <h3 id="dish3">Fresh Salad</h3>
+              <p class="muted">Seasonal greens with a zesty dressing — a light, healthy option.</p>
+              <p class="price">$6.00</p>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-title"><h2>About Us</h2></div>
+        <p class="muted">Abeni Food started from a love of family recipes and the desire to share real, comforting flavors. We use fresh ingredients and traditional techniques to create meals that remind you of home.</p>
+        <p style="margin-top:12px"><a class="cta" href="#contact">Order Now</a></p>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title"><h2>Contact</h2></div>
+        <p class="muted">Questions or custom orders? Reach out and we'll get back to you promptly.</p>
+        <form style="max-width:600px;margin-top:12px" action="#" method="post" onsubmit="alert('Demo form — no submission configured');return false;" aria-label="Contact form">
+          <div style="display:flex;gap:8px;flex-wrap:wrap">
+            <input type="text" name="name" placeholder="Your name" required style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(44,62,80,0.08)">
+            <input type="email" name="email" placeholder="Email" required style="flex:1;padding:10px;border-radius:8px;border:1px solid rgba(44,62,80,0.08)">
+          </div>
+          <textarea name="message" placeholder="Message" rows="4" required style="width:100%;margin-top:8px;padding:10px;border-radius:8px;border:1px solid rgba(44,62,80,0.08)"></textarea>
+          <p style="margin-top:8px"><button type="submit" class="cta">Send Message</button></p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <small>&copy; 2026 Abeni Food — Made with passion.</small>
+    </div>
+  </footer>
+</body>
+</html>
